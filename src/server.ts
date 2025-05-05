@@ -11,7 +11,7 @@ server.use(express.urlencoded( {extended: true} ));
 server.use('/', router);
 
 server.listen(3000, () => {
-    console.log("Servidor Rodando: https://localhost:3000");
+    console.log("Servidor Rodando: http://localhost:3000");
 });
 
 
