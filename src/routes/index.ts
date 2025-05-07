@@ -3,14 +3,14 @@ import { error } from "console";
 import express, {Request, Response} from "express";
 import { readFile, writeFile } from "fs/promises";
 
-const dataSource = "../data/list.txt";
+const dataSource = "./data/list.txt";
 
 const router = express.Router();
 
 router.post('/contato', async (req: Request, res: Response) => {
-    const { name } = req.body;
+    const { name } = req.body as { name: string };
 
-    if(!name || name < 2){
+    if(!name || name.length < 2){
         res.json( {error: "Nome precisa ter pelo menos 2 caracteres."} );
         return;
     }
